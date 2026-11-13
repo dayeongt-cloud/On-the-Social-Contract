@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>무인도 보물찾기로 알아보는 나의 선호 사회계약론</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--sky:#bfe9f5;--g1:#9bdc78;--g2:#82cc61;--card:#fffbe8;--ink:#6b5436;--sub:#94805d;--line:#e4d29e;--btn:#e9a93c;--btnt:#4d3a1c;--bg:#f6ecc8;--tag:#b4506a;--tagt:#fff;--av:#fff;
+--h:#b8322a;--hb:#fbe3e0;--l:#1f5fa8;--lb:#dfeafa;--r:#26805a;--rb:#dcf3e8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sky:#1a2c4a;--g1:#2f6b3f;--g2:#285c36;--card:#3b3524;--ink:#f3e9cf;--sub:#c9b98f;--line:#6b5d3a;--btn:#e9b24c;--btnt:#3b2c10;--bg:#2e2a1c;--tag:#d1708a;--av:#524a33;--h:#ff8a80;--hb:#4a2523;--l:#82b4f0;--lb:#1d3a5e;--r:#6fd1a2;--rb:#1b4a37}}
+:root[data-theme="dark"]{--sky:#1a2c4a;--g1:#2f6b3f;--g2:#285c36;--card:#3b3524;--ink:#f3e9cf;--sub:#c9b98f;--line:#6b5d3a;--btn:#e9b24c;--btnt:#3b2c10;--bg:#2e2a1c;--tag:#d1708a;--av:#524a33;--h:#ff8a80;--hb:#4a2523;--l:#82b4f0;--lb:#1d3a5e;--r:#6fd1a2;--rb:#1b4a37}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);min-height:100%}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:"Jua","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;line-height:1.7;font-size:18px;font-weight:600;
+background:radial-gradient(circle at 12px 12px,rgba(255,255,255,.18) 3px,transparent 4px) 0 0/48px 48px,linear-gradient(var(--sky) 0,var(--sky) 150px,var(--g1) 150px,var(--g2) 100%) fixed}
+main{max-width:720px;margin:0 auto;padding:16px 14px 56px}
+h1{font-size:1.9rem;line-height:1.3;margin:6px 0 12px}
+h2{font-size:1.25rem;margin:0 0 10px;line-height:1.4}
+p{margin:0 0 12px}
+.card,.bub{background:var(--card);border:4px solid var(--line);border-radius:30px;padding:22px 22px 18px;margin-bottom:18px;position:relative}
+.bub{padding-top:30px;min-height:130px}
+.nt{position:absolute;top:-18px;left:22px;background:var(--tag);color:var(--tagt);border-radius:999px;padding:3px 18px;font-size:1rem}
+.ar{position:absolute;right:26px;bottom:10px;width:0;height:0;border:10px solid transparent;border-top:14px solid #f2b705;border-bottom:0;visibility:hidden;animation:bob 1s infinite}
+@keyframes bob{50%{transform:translateY(5px)}}
+@media (prefers-reduced-motion:reduce){.ar{animation:none}}
+.sub{color:var(--sub);font-size:.95rem}
+button{font:inherit;cursor:pointer;border-radius:999px;border:3px solid var(--line);background:var(--card);color:var(--ink);padding:12px 20px;text-align:left;width:100%;margin-bottom:10px;line-height:1.5}
+button:hover{border-color:var(--btn);background:var(--bg)}
+button:focus-visible{outline:4px solid var(--btn);outline-offset:2px}
+button.go{background:var(--btn);color:var(--btnt);border-color:#c98a1f;text-align:center;width:auto;padding:12px 28px}
+.top{display:flex;align-items:center;gap:10px;background:var(--card);border:4px solid var(--line);border-radius:999px;padding:8px 18px;margin-bottom:12px}
+.bar{height:12px;background:var(--bg);border-radius:8px;overflow:hidden;flex:1}
+.bar i{display:block;height:100%;background:#7cc65c;transition:width .4s;border-radius:8px}
+.stage{display:flex;justify-content:space-around;align-items:flex-end;padding:6px 0 4px}
+.ch{text-align:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.4);font-size:.95rem}
+.av{width:112px;height:122px;position:relative;margin:0 auto 2px}.av svg{width:100%;height:100%;overflow:visible}.mood{position:absolute;top:-6px;right:-14px;font-size:1.6rem;background:var(--card);border:3px solid var(--line);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;line-height:1}
+.tag{display:inline-block;border-radius:999px;padding:2px 14px;font-size:.9rem;margin-bottom:8px}
+.H{background:var(--hb);color:var(--h)}.L{background:var(--lb);color:var(--l)}.R{background:var(--rb);color:var(--r)}
+.fb{border-radius:18px;padding:12px 16px;margin:6px 0 14px}
+.meter{display:flex;gap:10px;margin:14px 0}
+.meter div{flex:1;border-radius:18px;padding:10px;text-align:center}
+.meter b{display:block;font-size:1.5rem}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:.92rem}
+th,td{border:2px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--bg)}
+.big{font-size:3rem;line-height:1}
+.d{border-left:5px solid var(--line);padding:2px 0 2px 12px;margin-bottom:10px;font-size:.95rem}
+
+:root{--sea:#6cc3e0;--sand:#f3dc9a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sea:#1d4d73;--sand:#8c7b4b}}
+:root[data-theme="dark"]{--sea:#1d4d73;--sand:#8c7b4b}
+.map{position:relative;height:min(74vw,380px);border:4px solid var(--line);border-radius:30px;overflow:hidden;margin-bottom:14px;touch-action:none;cursor:pointer;background:radial-gradient(ellipse 46% 44% at 50% 50%,var(--g1) 0 58%,var(--sand) 64% 100%,transparent 101%),var(--sea)}
+.pc{position:absolute;width:64px;height:72px;transform:translate(-50%,-85%);pointer-events:none}
+.pc .in{width:100%;height:100%;position:relative}
+.pc svg{width:100%;height:100%;overflow:visible}
+.pc.walk .in{animation:hop .35s infinite}
+@keyframes hop{50%{transform:translateY(-7px)}}
+.pc .mood{position:absolute;top:-10px;right:-12px;width:28px;height:28px;font-size:1rem;border-width:2px;background:var(--card);border-style:solid;border-color:var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1}
+.nm{position:absolute;left:50%;transform:translateX(-50%);bottom:-18px;font-size:.78rem;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.6);white-space:nowrap}
+.sp{position:absolute;transform:translate(-50%,-50%);font-size:2rem;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.55);border:3px dashed var(--btn);display:flex;align-items:center;justify-content:center;animation:bob 1.2s infinite}
+.sp.near{background:var(--btn);border-style:solid}
+.sp b{position:absolute;top:-12px;right:-4px;background:#e0524a;color:#fff;border-radius:50%;width:22px;height:22px;font-size:.85rem;display:flex;align-items:center;justify-content:center}
+.dn{position:absolute;transform:translate(-50%,-50%);font-size:1.2rem;opacity:.8}
+.ctl{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--card);border:4px solid var(--line);border-radius:30px;padding:12px 16px;margin-bottom:18px}
+.dp{display:grid;grid-template-columns:repeat(3,48px);gap:4px}
+.dp button{width:48px;height:48px;padding:0;margin:0;text-align:center;border-radius:14px;touch-action:none;user-select:none}
+.ctl .go{margin:0}
+.ctl .go:disabled{opacity:.45;cursor:default}
+.hint{flex:1;font-size:.9rem;color:var(--sub);line-height:1.5}
+@media (prefers-reduced-motion:reduce){.pc.walk .in,.sp{animation:none}}
+
+.dc{position:absolute;transform:translate(-50%,-50%);pointer-events:none;line-height:1}
+.dc i{position:absolute;left:50%;transform:translateX(-50%);top:100%;font-style:normal;font-size:.72rem;background:var(--card);color:var(--ink);border:2px solid var(--line);border-radius:999px;padding:0 8px;white-space:nowrap;line-height:1.5}
+.pond{position:absolute;left:37%;top:66%;width:15%;height:11%;transform:translate(-50%,-50%);border-radius:50%;background:var(--sea);border:3px solid var(--sand);pointer-events:none;display:flex;align-items:center;justify-content:center;gap:6px;font-size:1.1rem}
+.field{position:absolute;left:74%;top:80%;width:17%;height:13%;transform:translate(-50%,-50%);border-radius:10px;border:3px solid #6e4524;background:repeating-linear-gradient(#a9743f 0 9px,#8d5d30 9px 13px);pointer-events:none;display:flex;align-items:center;justify-content:center;font-size:1.1rem;letter-spacing:2px}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script>
+var T={
+H:{n:"홉스",icon:"🐊",k:"리바이어던",c:"H",desc:"자연상태는 만인의 만인에 대한 투쟁 상태입니다. 죽음의 공포에서 벗어나려고 모두가 권리를 한 명의 주권자에게 양도하고, 주권자는 절대적 권력을 가집니다."},
+L:{n:"로크",icon:"🦉",k:"자연권 · 저항권",c:"L",desc:"자연상태에도 자연법과 권리가 있지만 공정한 재판관이 없습니다. 시민은 동의로 정부를 세우고, 정부가 생명·자유·재산을 침해하면 저항하고 새 정부를 세울 수 있습니다."},
+R:{n:"루소",icon:"🦌",k:"일반의지",c:"R",desc:"자연상태의 인간은 자유롭고 순박했지만 사유재산이 불평등을 낳았습니다. 시민 모두가 일반의지(모두의 공동 이익을 위한 뜻)를 따르는 공동체를 만들면 자유와 평등을 되찾을 수 있습니다."}};
+var S=[
+["1일차","🥵","폭풍에 배가 뒤집혀 하루는 낯선 섬 해변에서 눈을 떴다. 물도 불도 없다. 그때 모래 위에서 낯선 발자국을 발견한다.",
+ [["H","숨어서 지켜본다. 낯선 사람은 나를 해칠지 모른다. 돌과 나뭇가지로 무기부터 만든다.","홉스: 자연상태에서 인간은 서로를 두려워하고 선제적으로 대비합니다."],["L","조심스럽게 다가가 말을 걸어 본다. 서로 해칠 이유는 없다.","로크: 자연법이 있어 인간은 서로의 생명과 재산을 함부로 해치지 않습니다."],["R","반갑게 달려가 손을 내민다. 사람은 본래 순박하고 서로 동정한다.","루소: 자연상태의 인간은 자기애와 연민을 지닌 순박한 존재입니다."]]],
+["3일차","😮‍💨","생존자 일곱 명이 모였다. 하루는 열매가 가득한 나무를 찾았는데, 먼저 와서 따던 사람이 이 나무는 내 것이라고 주장한다.",
+ [["L","노동으로 딴 열매는 딴 사람 몫이다. 나무는 함께 쓰되 남길 만큼만 가져가자.","로크: 노동을 섞은 것은 내 소유가 되고, 썩히지 않을 만큼이라는 한계가 있습니다."],["H","힘으로 지킬 수 있어야 내 것이다. 하루도 서둘러 다른 나무를 차지한다.","홉스: 자연상태에는 정의도 소유도 없고, 지킬 수 있는 만큼만 내 것입니다."],["R","나무는 모두의 것이다. 울타리를 치고 내 것이라 하는 순간 불평등이 시작된다.","루소: 땅에 울타리를 치고 내 것이라 한 것이 불평등과 시민사회의 출발입니다."]]],
+["4일차","😠","밤사이 누군가 식량을 훔쳐 갔다. 범인은 짐작되지만 증거는 없다. 이 섬에는 판단해 줄 사람이 없다.",
+ [["H","내가 직접 찾아내 되갚는다. 약해 보이면 또 당한다.","홉스: 공동의 권력이 없으면 각자가 자기 힘으로 자신을 지켜야 합니다."],["L","공정한 재판관이 있어야 한다. 각자 판결하면 복수가 복수를 부른다.","로크: 자연상태의 문제는 공평한 재판관이 없다는 것이고, 이것이 정부의 필요성입니다."],["R","범인도 굶주렸을지 모른다. 모두 모여 이야기하고 함께 해결책을 찾자.","루소: 불평등에서 생긴 갈등은 공동체의 합의로 풀어야 합니다."]]],
+["6일차","🤔","사람들이 모여 규칙을 만들자는 이야기가 나왔다. 하루는 우리가 약속을 맺어 국가를 만드는 가장 큰 이유를 말해야 한다.",
+ [["R","모두가 함께 만든 규칙 아래에서 자유와 평등을 되찾기 위해서다.","루소: 사회계약의 목적은 공동체 안에서 자유와 평등을 회복하는 것입니다."],["H","죽음의 공포에서 벗어나 살아남기 위해서다. 안전이 먼저다.","홉스: 계약의 목적은 자기 보존, 곧 평화와 안전입니다."],["L","각자의 생명, 자유, 재산을 지키기 위해서다.","로크: 계약의 목적은 자연권의 보장입니다."]]],
+["7일차","😤","약속을 맺기로 했다. 이제 권력을 어떻게 맡길지 정해야 한다.",
+ [["L","대표를 뽑되 법을 만드는 사람과 집행하는 사람을 나눠 서로 견제하게 한다.","로크: 입법권과 집행권을 분리하고 대의 정치로 권력을 제한합니다."],["R","대표에게만 맡기지 않고 모든 사람이 모여 직접 법을 정한다.","루소: 주권은 시민 전체에게 있고 대표될 수 없습니다."],["H","강한 한 사람에게 권력을 몰아준다. 권력이 갈라지면 다시 싸움이 난다.","홉스: 주권은 분할할 수 없고 절대적이어야 합니다."]]],
+["9일차","😒","동료 한 명이 말한다. 나는 그 계약에 동의한 적이 없으니 규칙을 따를 이유가 없다. 하루는 어떻게 답할까?",
+ [["L","동의가 있어야 규칙이 정당해. 동의한 사람들이 다수결로 정한 규칙은 함께 따르고, 동의하지 않는 사람은 억지로 붙잡지 않고 떠날 수 있게 해 줘.","로크: 정부의 정당성은 시민의 동의에서 나오며 다수결로 공동체를 운영합니다."],["H","섬의 안전 혜택을 누리면서 규칙은 안 지키겠다는 건 안 된다. 어겨도 처벌받아야 한다.","홉스: 신약은 칼 없이는 말에 불과하고, 강제력이 있어야 합니다."],["R","모두가 함께 만든 약속을 따르는 게 곧 자유야. 어기는 사람이 있으면 함께 설득해 보자.","루소: 모두의 공동 이익을 위한 뜻을 일반의지라고 합니다. 내가 함께 만든 규칙을 따르는 것은 남의 명령이 아니라 나 자신의 뜻을 따르는 것이므로 곧 자유입니다."]]],
+["12일차","😡","선출된 지도자가 약속을 어기고 시민의 식량과 쉼터를 마음대로 빼앗기 시작했다.",
+ [["L","시민에게는 저항할 권리가 있다. 신뢰를 어긴 지도자를 바꾼다.","로크: 정부가 신탁을 어기면 시민은 저항권을 행사해 새 정부를 세울 수 있습니다."],["H","원칙적으로 따라야 한다. 반항하면 다시 무질서한 투쟁 상태가 된다. 다만 내 목숨이 직접 위협받으면 스스로 지킬 수 있다.","홉스: 시민은 주권자의 행위를 스스로 승인했으므로 저항은 원칙적으로 불허합니다. 다만 자기 보존의 권리는 포기할 수 없어서 생명이 직접 위협받을 때는 예외입니다."],["R","모두를 위한 뜻에서 벗어난 정부는 정당하지 않아. 시민이 모여 다시 결정하자.","루소: 주권자인 시민이 정부를 새로 세울 수 있습니다."]]],
+["14일차","😰","거대한 폭풍이 다가온다. 지도자가 비상시니 모든 권한을 달라고 요구한다.",
+ [["H","권한을 모두 준다. 위기일수록 결정은 빠르고 강해야 한다.","홉스: 공동의 안전을 위해 강하고 분할되지 않은 권력이 필요합니다."],["L","기간과 범위를 제한해서 준다. 위기에도 자연권은 지켜야 한다.","로크: 비상시에도 권력은 공공선을 위해서만 쓰여야 합니다."],["R","시민 총회를 열어 모두가 결정한다. 위기에도 주권은 시민에게 있다.","루소: 주권은 양도되지 않으며 시민 전체의 일반의지에 있습니다."]]],
+["17일차","😣","새 법 때문에 하루는 식량을 조금 덜 받게 되었다. 불만이 크지만 법은 법이다.",
+ [["R","그래도 지킨다. 내가 참여해 만든 법이니 따르는 것이 곧 내 자유다.","루소: 스스로 만든 법에 복종하는 것이 자유입니다."],["L","법이 내 권리를 지키는 한 지킨다. 권리를 침해하면 따지겠다.","로크: 법은 자연권을 보호하는 한도에서 정당합니다."],["H","지킨다. 각자 마음대로 하면 약속이 무너져 다시 위험해진다.","홉스: 법과 주권자가 있어야 평화가 유지됩니다."]]],
+["20일차","🥹","멀리 구조선이 보인다. 떠나기 전 사람들이 묻는다. 우리 섬의 국가는 왜 정당했을까?",
+ [["R","모두가 직접 참여해 함께 만든 규칙이었기 때문이다.","루소: 정당성은 시민 모두가 참여한 일반의지에서 나옵니다."],["L","우리가 동의했고 서로의 생명·자유·재산을 지켜 주었기 때문이다.","로크: 정당성은 동의와 자연권 보장에서 나옵니다."],["H","모두가 죽음의 공포에서 벗어나 안전하게 살아남았기 때문이다.","홉스: 안전과 평화를 보장하는 것이 국가의 정당성입니다."]]]
+];
+var i=0,sc,log,app=document.getElementById("app");
+function shuf(a){a=a.slice();for(var j=a.length-1;j>0;j--){var k=Math.floor(Math.random()*(j+1)),t=a[j];a[j]=a[k];a[k]=t}return a}
+var NEG=["😠","😤","😡","😒","😣","😰"];
+function ch(k,neg){var K="#3a2a2a",o='<svg viewBox="0 0 100 112" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">';
+ var eyes='<ellipse cx="40" cy="50" rx="4" ry="5.5" fill="'+K+'"/><ellipse cx="60" cy="50" rx="4" ry="5.5" fill="'+K+'"/><circle cx="41.5" cy="48" r="1.7" fill="#fff"/><circle cx="61.5" cy="48" r="1.7" fill="#fff"/>';
+ var chk='<circle cx="31" cy="58" r="4.5" fill="#ff8fa3" opacity=".6"/><circle cx="69" cy="58" r="4.5" fill="#ff8fa3" opacity=".6"/>';
+ var mo='<path d="'+(neg?'M44 65 Q50 59 56 65':'M44 60 Q50 67 56 60')+'" stroke="'+K+'" stroke-width="2" fill="none" stroke-linecap="round"/>';
+ if(k=="r")o+='<ellipse cx="37" cy="16" rx="8" ry="20" fill="#8fd9b6" transform="rotate(-10 37 16)"/><ellipse cx="37" cy="17" rx="4" ry="13" fill="#ffc2a0" transform="rotate(-10 37 17)"/><ellipse cx="63" cy="16" rx="8" ry="20" fill="#8fd9b6" transform="rotate(10 63 16)"/><ellipse cx="63" cy="17" rx="4" ry="13" fill="#ffc2a0" transform="rotate(10 63 17)"/><ellipse cx="50" cy="94" rx="22" ry="17" fill="#8fd9b6"/><path d="M33 86 Q50 102 67 86 L68 108 Q50 112 32 108Z" fill="#3d6fd1"/><circle cx="50" cy="52" r="28" fill="#8fd9b6"/><path d="M26 42 Q40 26 74 40 Q62 34 50 34 Q36 34 26 42Z" fill="#f3d36b"/>'+eyes+chk+'<ellipse cx="50" cy="56" rx="3.2" ry="2.3" fill="#f08a3c"/>'+mo;
+ if(k=="s")o+='<ellipse cx="80" cy="82" rx="16" ry="27" fill="#ecd27c" transform="rotate(18 80 82)"/><circle cx="29" cy="28" r="9" fill="#f6e7a8"/><circle cx="29" cy="29" r="4.5" fill="#ffc2a0"/><circle cx="71" cy="28" r="9" fill="#f6e7a8"/><circle cx="71" cy="29" r="4.5" fill="#ffc2a0"/><ellipse cx="50" cy="94" rx="21" ry="17" fill="#6a7fc0"/><circle cx="50" cy="52" r="28" fill="#f6e7a8"/><path d="M32 41 L46 46 M68 41 L54 46" stroke="'+K+'" stroke-width="3" stroke-linecap="round"/>'+eyes+chk+'<ellipse cx="50" cy="57" rx="3" ry="2.2" fill="#a8703a"/><path d="M45 63 Q50 60 55 63" stroke="'+K+'" stroke-width="2" fill="none" stroke-linecap="round"/><ellipse cx="50" cy="100" rx="7" ry="6" fill="#a8703a"/><rect x="43" y="93" width="14" height="5" rx="2" fill="#7a4d22"/>';
+ if(k=="d")o+='<path d="M38 26 Q30 10 36 2 M35 15 Q28 16 25 11 M62 26 Q70 10 64 2 M65 15 Q72 16 75 11" stroke="#e0524a" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="20" cy="42" rx="12" ry="7" fill="#f4ecd2" transform="rotate(-25 20 42)"/><ellipse cx="80" cy="42" rx="12" ry="7" fill="#f4ecd2" transform="rotate(25 80 42)"/><ellipse cx="50" cy="94" rx="21" ry="17" fill="#7fd0c8"/><circle cx="50" cy="52" r="27" fill="#f4ecd2"/><circle cx="36" cy="34" r="2.5" fill="#f2a65a"/><circle cx="64" cy="34" r="2.5" fill="#f2a65a"/>'+eyes+chk+'<ellipse cx="50" cy="58" rx="4.2" ry="3" fill="'+K+'"/><path d="M44 65 Q50 70 56 65" stroke="'+K+'" stroke-width="2" fill="none" stroke-linecap="round"/>';
+ return o+'</svg>'}
+var V=[["🐑","몽실"],["🐿️","도토리"],["🐻","푸딩"],["🐰","토순"],["🦌","밤비"],["🐸","개굴"],["🐧","뚜벅"],["🦊","여우비"],["🐱","나비"],["🐶","멍이"]];
+function typ(el,txt,cb){var n=0,id,fin=false;function end(){if(fin)return;fin=true;clearInterval(id);el.textContent=txt;if(cb)cb()}
+ if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){end();return}
+ id=setInterval(function(){n++;el.textContent=txt.slice(0,n);if(n>=txt.length)end()},30);el.parentNode.onclick=end}
+function start(){i=0;hx=14;hy=52;cx=10;cy=58;tx=null;phase="intro";sc={H:0,L:0,R:0};log=[];
+ app.innerHTML='<div class="card" style="text-align:center;padding:14px"><b style="font-size:1.2rem">🏝️ 무인도 보물찾기로 알아보는<br>나의 선호 사회계약론</b></div><div class="stage"><div class="ch"><div class="av">'+ch("r")+'</div>하루</div><div class="ch"><div class="av">'+ch("s")+'</div>도토리</div></div><div class="bub"><span class="nt">하루</span><p id="tx"></p><i class="ar" id="ar"></i></div><div id="ops"></div>';
+ typ(document.getElementById("tx"),"폭풍에 배가 뒤집혀 무인도에 떨어진 나, 하루야. 모래 속에서 보물 지도를 주웠어! 섬 열 군데에서 열 번 선택하며 보물 조각을 모으면 상자가 열린대. 네 선택을 가장 많이 받은 사상가가 바로 나의 선호 사회계약론이야. 정답은 없어. 너라면 어떻게 할래?",function(){document.getElementById("ar").style.visibility="visible";document.getElementById("ops").innerHTML='<button class="go" id="st">🗺️ 보물찾기 시작</button>';document.getElementById("st").onclick=explore})}
+var P=[[22,70],[70,62],[30,38],[50,52],[76,30],[24,28],[58,78],[40,26],[82,60],[90,50]],E=["👣","🥥","📦","🔥","🪵","⛺","👑","⛈️","📜","🚢"];
+var hx=14,hy=52,cx=10,cy=58,tx=null,ty=null,held={},raf=0,last=0,phase="",near=false,face=1,cface=1,KM={ArrowLeft:"l",a:"l",ArrowRight:"r",d:"r",ArrowUp:"u",w:"u",ArrowDown:"d",s:"d"};
+var DEC="";
+[["🌴",14,40,2.3],["🌴",12,60,2.3],["🌴",34,14,2.3],["🌴",62,16,2.3],["🌴",46,86,2.3],["🌴",66,48,2.1],["🪨",32,60,1.6],["🪨",80,44,1.5],["🐚",18,52,1.2],["🐚",60,66,1.2],["🐚",36,76,1.2],["🦀",46,72,1.4],["⭐",50,90,1.2],["🥥",56,30,1.3],["🛶",8,52,2,"난파선 조각"],["🐬",8,10,1.6],["⛵",92,12,1.6],["🐟",92,86,1.3],["🐙",6,88,1.4]].forEach(function(a){DEC+='<div class="dc" style="left:'+a[1]+'%;top:'+a[2]+'%;font-size:'+a[3]+'rem">'+a[0]+(a[4]?'<i>'+a[4]+'</i>':'')+'</div>'});
+function explore(){phase="explore";var d=S[i],neg=NEG.indexOf(d[1])>=0,ck=i%2?"d":"s";
+ var m=DEC;for(var q=0;q<i;q++)m+='<span class="dn" style="left:'+P[q][0]+'%;top:'+P[q][1]+'%">✅</span>';
+ m+='<div class="sp" id="sp" style="left:'+P[i][0]+'%;top:'+P[i][1]+'%">'+E[i]+'<b>!</b></div>';
+ app.innerHTML='<div class="top"><b>'+d[0]+'</b><div class="bar"><i style="width:'+(i/S.length*100)+'%"></i></div><span class="sub">🧩 '+i+'/'+S.length+'</span></div><div class="map" id="map">'+m+
+ '<div class="pc" id="cp"><div class="in">'+ch(ck)+'</div><span class="nm">'+(i%2?"밤비":"도토리")+'</span></div><div class="pc" id="hr"><div class="in">'+ch("r",neg)+'<span class="mood">'+d[1]+'</span></div><span class="nm">하루</span></div></div>'+
+ '<div class="ctl" id="ctl"><div class="dp"><span></span><button data-k="u" aria-label="위">▲</button><span></span><button data-k="l" aria-label="왼쪽">◀</button><span></span><button data-k="r" aria-label="오른쪽">▶</button><span></span><button data-k="d" aria-label="아래">▼</button><span></span></div><div class="hint" id="hint"></div><button class="go" id="act" disabled>🔍 단서 찾기</button></div><div id="dlg"></div>';
+ var bs=document.querySelectorAll(".dp button");
+ for(var n=0;n<bs.length;n++){(function(b){var k=b.getAttribute("data-k");b.onpointerdown=function(e){e.preventDefault();held[k]=1};["onpointerup","onpointerleave","onpointercancel"].forEach(function(ev){b[ev]=function(){held[k]=0}})})(bs[n])}
+ var map=document.getElementById("map");
+ map.onpointerdown=function(e){var r=map.getBoundingClientRect();tx=(e.clientX-r.left)/r.width*100;ty=(e.clientY-r.top)/r.height*100};
+ document.getElementById("act").onclick=dlgStart;
+ window.scrollTo(0,0);cancelAnimationFrame(raf);last=performance.now();raf=requestAnimationFrame(loop)}
+function loop(t){raf=requestAnimationFrame(loop);var dt=Math.min(.05,(t-last)/1000||0);last=t;
+ var map=document.getElementById("map");if(phase!=="explore"||!map)return;
+ var W=map.clientWidth,H=map.clientHeight,vx=(held.r?1:0)-(held.l?1:0),vy=(held.d?1:0)-(held.u?1:0),mv=false;
+ if(vx||vy)tx=null;else if(tx!==null){var dx=(tx-hx)*W/100,dy=(ty-hy)*H/100,dd=Math.sqrt(dx*dx+dy*dy);if(dd<6)tx=null;else{vx=dx/dd;vy=dy/dd}}
+ if(vx||vy){var l=Math.sqrt(vx*vx+vy*vy),sp=170*dt,nx=hx+vx/l*sp/W*100,ny=hy+vy/l*sp/H*100;
+  if(Math.pow((nx-50)/46,2)+Math.pow((ny-50)/44,2)<.88){hx=nx;hy=ny;mv=true}else tx=null;if(vx)face=vx>0?1:-1}
+ var ax=(hx-cx)*W/100,ay=(hy-cy)*H/100,ad=Math.sqrt(ax*ax+ay*ay),cm=false;
+ if(ad>70){var s2=150*dt;cx+=ax/ad*s2/W*100;cy+=ay/ad*s2/H*100;cm=true;cface=ax>0?1:-1}
+ var hr=document.getElementById("hr"),cp=document.getElementById("cp");
+ hr.style.left=hx+"%";hr.style.top=hy+"%";hr.style.zIndex=Math.round(hy);hr.className="pc"+(mv?" walk":"");hr.firstChild.style.transform="scaleX("+face+")";
+ cp.style.left=cx+"%";cp.style.top=cy+"%";cp.style.zIndex=Math.round(cy);cp.className="pc"+(cm?" walk":"");cp.firstChild.style.transform="scaleX("+cface+")";
+ var px=(P[i][0]-hx)*W/100,py=(P[i][1]-hy)*H/100;near=Math.sqrt(px*px+py*py)<62;
+ document.getElementById("act").disabled=!near;document.getElementById("sp").className="sp"+(near?" near":"");
+ document.getElementById("hint").textContent=near?"도착! 버튼을 눌러 단서를 살펴보자.":"보물 지도의 ! 표시가 있는 곳으로 걸어가 보자. 화면을 누르거나 방향 버튼으로 움직여."}
+addEventListener("keydown",function(e){if(phase!=="explore")return;var k=KM[e.key];if(k){held[k]=1;e.preventDefault()}else if((e.key==="Enter"||e.key===" ")&&near){e.preventDefault();dlgStart()}});
+addEventListener("keyup",function(e){var k=KM[e.key];if(k)held[k]=0});
+function dlgStart(){if(phase!=="explore")return;phase="dialog";held={};tx=null;var d=S[i],o=shuf(d[3]);window.curO=o;
+ document.getElementById("ctl").style.display="none";document.getElementById("map").style.display="none";var dl=document.getElementById("dlg"),ng=NEG.indexOf(d[1])>=0,kd=i%2?"d":"s";
+ dl.innerHTML='<div class="stage"><div class="ch"><div class="av">'+ch("r",ng)+'<span class="mood">'+d[1]+'</span></div>하루</div><div class="ch"><div class="av">'+ch(kd)+'</div>'+(i%2?"밤비":"도토리")+'</div></div><div class="bub"><span class="nt">하루의 일기</span><p id="tx"></p><i class="ar" id="ar"></i></div><div id="ops"></div><div id="fb"></div>';
+ typ(document.getElementById("tx"),d[2],function(){document.getElementById("ar").style.visibility="visible";
+  var h="";o.forEach(function(x,n){h+='<button data-n="'+n+'">'+x[1]+'</button>'});document.getElementById("ops").innerHTML=h;
+  var bs=document.querySelectorAll("#ops button");for(var n=0;n<bs.length;n++){bs[n].onclick=function(){pick(+this.getAttribute("data-n"))}}});
+ window.scrollTo(0,0)}
+function pick(n){var x=window.curO[n],k=x[0],t=T[k],p=x[2].split(":");sc[k]++;log.push([S[i][0],x[1]]);
+ var bs=document.querySelectorAll("#ops button");
+ for(var m=0;m<bs.length;m++){bs[m].disabled=true;if(m!==n)bs[m].style.opacity=".5"}
+ document.getElementById("fb").innerHTML='<div class="bub"><span class="nt">'+t.icon+' '+p[0]+'의 생각</span><p id="ft"></p><i class="ar" id="ar2"></i></div><div id="nxw"></div>';
+ typ(document.getElementById("ft"),p[1].trim(),function(){document.getElementById("ar2").style.visibility="visible";
+  document.getElementById("nxw").innerHTML='<div class="bub" style="min-height:0;padding-top:16px;text-align:center">🧩 <b>보물 조각 '+(i+1)+' / '+S.length+'</b>을 모았다!</div><button class="go" id="nx">'+(i<S.length-1?"다음 보물 찾으러 가기":"🎁 보물 상자 열기")+'</button>';
+  var b=document.getElementById("nx");b.onclick=function(){i++;if(i<S.length)explore();else result()};b.focus()})}
+function result(){phase="end";cancelAnimationFrame(raf);var ks=["H","L","R"].sort(function(a,b){return sc[b]-sc[a]}),t=T[ks[0]],tie=sc[ks[0]]===sc[ks[1]];
+ var h='<div class="card"><p class="sub">🎁 보물 상자 안에는 나의 선호 사회계약론이 들어 있었다!</p><div class="big">'+t.icon+'</div><h1>'+(tie?T[ks[0]].n+'·'+T[ks[1]].n+' 사이에서 고민하는 사회계약론':'나는 '+t.n+'의 사회계약론!')+'</h1><div class="meter">'+
+ ["H","L","R"].map(function(x){return '<div class="'+x+'"><b>'+sc[x]+'</b>'+T[x].n+'</div>'}).join('')+'</div><p>10번의 선택 중 <b>'+sc[ks[0]]+'번</b>을 '+T[ks[0]].n+'의 생각으로 골랐어요.</p><div class="fb '+t.c+'"><span class="tag '+t.c+'">'+t.k+'</span><p>'+t.desc+'</p></div>'+(tie?'<p class="sub">점수가 같아요. 두 사상가 중 누구의 주장이 더 설득력 있는지 친구들과 이야기해 보세요.</p>':'')+'</div>';
+ h+='<div class="card"><h2>나의 선택 기록</h2>'+log.map(function(l){return '<div class="d"><b>'+l[0]+'</b> '+l[1]+'</div>'}).join('')+'</div>';
+ h+='<div class="card"><h2>세 사상가 한눈에 비교</h2><div class="wrap"><table><tr><th></th><th>홉스</th><th>로크</th><th>루소</th></tr><tr><th>자연상태</th><td>만인의 만인에 대한 투쟁</td><td>평화롭지만 재판관이 없어 불편</td><td>자유롭고 평등하나 사유재산으로 불평등 발생</td></tr><tr><th>계약의 목적</th><td>자기 보존, 안전</td><td>생명·자유·재산 보호</td><td>자유와 평등의 회복</td></tr><tr><th>주권</th><td>주권자에게 양도, 절대적</td><td>시민이 신탁, 제한됨</td><td>시민 전체의 일반의지(모두의 공동 이익을 위한 뜻)</td></tr><tr><th>저항</th><td>원칙적으로 불허(생명이 위협받으면 예외)</td><td>저항권 인정</td><td>모두의 공동 이익을 위한 뜻(일반의지)에 어긋나면 정당성 상실</td></tr></table></div></div>';
+ h+='<div class="card"><h2>친구들과 생각해 볼까요?</h2><p>① 열 번의 선택 중 가장 고민했던 순간은 언제였나요?</p><p>② 내 선택이 한 사상가에 모이지 않았다면 그 이유는 무엇일까요?</p><p>③ 지금 우리 사회는 누구의 생각에 가장 가까울까요?</p></div><button class="go" id="rt">🗺️ 다시 보물찾기</button>';
+ app.innerHTML=h;document.getElementById("rt").onclick=start;window.scrollTo(0,0)}
+start();
+</script>
+</body>
+</html>
